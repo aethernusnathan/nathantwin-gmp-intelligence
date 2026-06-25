@@ -1,20 +1,25 @@
-# GMP Documentation Intelligence
+# AI for GMP Documentation — A Practical Guide for Quality Managers
 
-**Nathan Qin / NathanTwin Intelligence** · Personal Research Brief · June 2026
+**Nathan Qin / NathanTwin Intelligence** · June 2026
 
-A colleague at Sanofi described the daily reality of pharmaceutical GMP (Good Manufacturing Practice) management: drowning in documents, spending 40–60% of their time on manual correctness checking, and failing with every AI tool they tried.
+An evidence-based guide to AI in pharmaceutical GMP documentation management.
+Audience: QA directors, site quality heads, and quality managers at pharmaceutical companies
+large and small who have tried AI tools and found them underdelivering.
 
-This brief maps the problem precisely, diagnoses why AI fails in GMP contexts, and frames a build strategy using Harvey (legal) and Ketryx (regulatory software) as proven architectures.
+The guide maps the **science of GMP documentation workflows**, assesses current AI tools honestly,
+diagnoses the failure modes with regulatory citations, and describes the architecture that can
+actually work — grounded in ICH Q10, FDA/EMA inspection data, and peer-reviewed evidence.
 
 ## What's Inside
 
-- **Live FDA Data** — Real-time GMP enforcement actions from openFDA drug enforcement API
-- **AI Player Landscape** — Evidence-based capability matrix of all major GMP AI tools
-- **Failure Mode Analysis** — Scientific diagnosis of why existing AI tools fail GMP managers
-- **Sanofi Case Study** — QualiPSO program and the documentation pipeline
-- **Architecture Design** — Four-layer system that satisfies both regulatory validity and correctness constraints
-- **Regulatory Timeline** — EMA Annex 22 window (2026–2028)
-- **Brain Nodes** — Knowledge points ready for Obsidian / Donna brain wiring
+- **GMP Manufacturing Process** — Documentation flow across API synthesis, drug product, QC, batch release
+- **Supply Chain Oversight** — CMO/CDMO documentation obligations; traceability requirements
+- **QMS Document Hierarchy** — L1 Policy through L6 APQR; the day-to-day review workflow
+- **Live FDA Enforcement Feed** — Real-time GMP drug recalls via openFDA (loads on page open)
+- **AI Tool Landscape** — Evidence-based capability matrix of Veeva, MasterControl, TrackWise, etc.
+- **Failure Mode Analysis** — Scientific diagnosis of why AI fails in GMP environments
+- **Compliant Architecture** — Four-layer design satisfying Annex 22 + 21 CFR Part 11
+- **EMA Annex 22 Timeline** — Regulatory window 2026–2028 and what it means for tool selection
 
 ## Live APIs Wired
 
@@ -25,7 +30,7 @@ This brief maps the problem precisely, diagnoses why AI fails in GMP contexts, a
 | 🇯🇵 Japan | PMDA | ◎ PubMed proxy |
 | 🇨🇳 China | NMPA | ◈ Portal reference |
 
-## Bruce Integration (NathanTwin Research Agent)
+## Bruce Integration (Donna Research Agent)
 
 Added GMP routing to Bruce (`bruce.py`) and five new API clients to `clinical_apis.py`:
 - `openfda_drug_enforcement()` — FDA drug recalls / GMP enforcement
@@ -38,8 +43,8 @@ Ask Bruce: *"What GMP manufacturing recalls has FDA issued in the last 6 months?
 
 ## View
 
-Open `index.html` in any browser. Live FDA data loads from openFDA on page load.
+Open `index.html` in any browser. Live FDA enforcement data loads from openFDA on page load.
 
 ---
 
-*Nathan Qin · NathanTwin Intelligence · Personal project, not affiliated with any employer.*
+*Nathan Qin · NathanTwin Intelligence · Personal research project.*
