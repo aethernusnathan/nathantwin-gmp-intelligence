@@ -1103,7 +1103,7 @@ function calcROI(){
   const rate=+document.getElementById('rate').value;
   // Phase 1: 61% BRR reduction (UCB pilot)
   const p1hrs=batches*brr*0.61*12;
-  const p1=$=p1hrs*rate;
+  const p1$=p1hrs*rate;
   // Phase 2: CAPA from capatime to 0.5 hrs
   const p2hrs=capas*Math.max(0,capatime-0.5)*12;
   const p2$=p2hrs*rate;
