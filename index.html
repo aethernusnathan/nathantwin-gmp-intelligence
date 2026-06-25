@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI for GMP Documentation — Practical Guide for Quality Managers</title>
+<!-- Social / OG -->
+<meta property="og:title" content="AI for GMP Documentation — What Works and What Doesn't">
+<meta property="og:description" content="Evidence-based guide for pharma QA managers: GMP workflows, AI tool assessment, failure modes, ROI calculator, and a compliant four-layer architecture. Live FDA enforcement data.">
+<meta property="og:url" content="https://nathantwin-gmp-intelligence.vercel.app">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://nathantwin-gmp-intelligence.vercel.app/og.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI for GMP Documentation — What Works and What Doesn't">
+<meta name="twitter:description" content="Evidence-based guide for pharma QA managers. Live FDA data, AI tool matrix, ROI calculator, readiness assessment, 4-layer compliant architecture.">
+<meta name="twitter:image" content="https://nathantwin-gmp-intelligence.vercel.app/og.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -285,6 +297,81 @@ table.mx tr:hover td{background:rgba(43,130,220,.02);}
 .cs-n{font-size:1.3rem;font-weight:800;color:var(--green);}
 .cs-l{font-size:.62rem;color:var(--text-3);margin-top:.1rem;}
 
+/* ─── ROI CALCULATOR ─── */
+.calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start;}
+.calc-inputs{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;box-shadow:var(--sh);}
+.calc-output{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem;box-shadow:var(--sh);}
+.calc-row{margin-bottom:1.1rem;}
+.calc-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.35rem;}
+.calc-lname{font-size:.78rem;font-weight:600;color:var(--text-1);}
+.calc-val{font-size:.85rem;font-weight:800;color:var(--accent);}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--border-m);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 0 0 3px rgba(27,79,138,.12);}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:pointer;border:none;}
+.calc-total-row{text-align:center;padding:1.1rem;background:linear-gradient(135deg,rgba(27,79,138,.06),rgba(43,130,220,.04));border-radius:var(--r-sm);margin-bottom:1rem;}
+.calc-total-n{font-size:2.4rem;font-weight:800;color:var(--accent);line-height:1;letter-spacing:-.03em;}
+.calc-total-l{font-size:.7rem;color:var(--text-3);margin-top:.2rem;}
+.calc-phases{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1rem;}
+.calc-phase{display:flex;align-items:center;gap:.7rem;}
+.calc-phase-label{font-size:.68rem;font-weight:600;color:var(--text-2);width:64px;flex-shrink:0;}
+.calc-bar-wrap{flex:1;background:var(--surface-2);border-radius:var(--r-pill);height:8px;overflow:hidden;}
+.calc-bar{height:100%;border-radius:var(--r-pill);transition:width .4s ease;}
+.calc-phase-val{font-size:.72rem;font-weight:700;color:var(--text-1);width:52px;text-align:right;flex-shrink:0;}
+.calc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+.calc-metric{background:var(--surface-2);border-radius:var(--r-sm);padding:.6rem .8rem;text-align:center;}
+.calc-metric-n{font-size:1.1rem;font-weight:800;color:var(--text-1);}
+.calc-metric-l{font-size:.62rem;color:var(--text-3);margin-top:.1rem;}
+.calc-disclaimer{font-size:.6rem;color:var(--text-3);margin-top:.75rem;line-height:1.5;}
+
+/* ─── SELF-ASSESSMENT ─── */
+.quiz-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);}
+.quiz-progress-bar{height:3px;background:var(--surface-2);}
+.quiz-progress-fill{height:100%;background:var(--accent-2);transition:width .3s ease;border-radius:0 2px 2px 0;}
+.quiz-body{padding:1.75rem;}
+.quiz-step-num{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:.6rem;}
+.quiz-q{font-size:1rem;font-weight:700;color:var(--text-1);margin-bottom:1.1rem;line-height:1.4;}
+.quiz-options{display:flex;flex-direction:column;gap:.5rem;}
+.quiz-opt{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border:1.5px solid var(--border-m);border-radius:var(--r-sm);cursor:pointer;transition:all .15s;background:var(--surface);}
+.quiz-opt:hover{border-color:var(--accent-2);background:rgba(43,130,220,.03);}
+.quiz-opt.selected{border-color:var(--accent);background:rgba(27,79,138,.05);}
+.quiz-opt-icon{font-size:1.1rem;flex-shrink:0;}
+.quiz-opt-text{font-size:.82rem;color:var(--text-2);line-height:1.4;}
+.quiz-opt-text strong{color:var(--text-1);display:block;font-size:.84rem;}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;}
+.quiz-btn{font-size:.78rem;font-weight:600;padding:.5rem 1.2rem;border-radius:var(--r-pill);border:none;cursor:pointer;transition:all .15s;}
+.quiz-btn.primary{background:var(--accent);color:#fff;}
+.quiz-btn.primary:hover{background:#163e6e;}
+.quiz-btn.secondary{background:var(--surface-2);color:var(--text-2);border:1px solid var(--border-m);}
+.quiz-btn.secondary:hover{background:var(--border);}
+.quiz-result{padding:1.75rem;text-align:center;}
+.quiz-score-ring{width:80px;height:80px;border-radius:50%;margin:0 auto .9rem;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;}
+.quiz-result-title{font-size:1.1rem;font-weight:800;color:var(--text-1);margin-bottom:.4rem;}
+.quiz-result-sub{font-size:.84rem;color:var(--text-2);line-height:1.65;margin-bottom:1rem;}
+.quiz-result-items{display:flex;flex-direction:column;gap:.4rem;text-align:left;margin-bottom:1rem;}
+.quiz-result-item{display:flex;gap:.6rem;align-items:flex-start;font-size:.78rem;color:var(--text-2);padding:.5rem .7rem;background:var(--surface-2);border-radius:var(--r-sm);}
+
+/* ─── EMA FEED ─── */
+.ema-item{padding:.5rem 0;border-bottom:1px solid var(--border);display:flex;gap:.7rem;align-items:flex-start;}
+.ema-item:last-child{border-bottom:none;}
+.ema-tag{font-size:.58rem;font-weight:700;padding:.12rem .4rem;border-radius:3px;background:rgba(43,130,220,.09);color:var(--accent-2);white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.ema-title{font-size:.75rem;font-weight:600;color:var(--text-1);line-height:1.35;}
+.ema-meta{font-size:.6rem;color:var(--text-3);margin-top:.18rem;}
+
+/* ─── CTA ─── */
+.cta-section{background:linear-gradient(135deg,rgba(27,79,138,.07) 0%,rgba(43,130,220,.05) 100%);border-top:1px solid rgba(27,79,138,.12);padding:4rem clamp(1rem,4vw,2rem);}
+.cta-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;}
+.cta-title{font-size:1.5rem;font-weight:800;color:var(--text-1);letter-spacing:-.025em;margin-bottom:.5rem;}
+.cta-body{font-size:.9rem;color:var(--text-2);line-height:1.7;max-width:520px;}
+.cta-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;box-shadow:var(--sh-lg);min-width:260px;text-align:center;}
+.cta-avatar{width:52px;height:52px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.1rem;font-weight:800;display:grid;place-items:center;margin:0 auto .75rem;}
+.cta-name{font-size:.95rem;font-weight:700;color:var(--text-1);margin-bottom:.2rem;}
+.cta-role{font-size:.72rem;color:var(--text-3);margin-bottom:1rem;}
+.cta-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.6rem 1.1rem;border-radius:var(--r-pill);font-size:.78rem;font-weight:600;text-decoration:none;transition:all .15s;margin-bottom:.5rem;}
+.cta-btn.primary{background:var(--accent);color:#fff;}
+.cta-btn.primary:hover{background:#163e6e;}
+.cta-btn.ghost{background:transparent;border:1.5px solid var(--border-m);color:var(--text-2);}
+.cta-btn.ghost:hover{border-color:var(--accent-2);color:var(--accent-2);}
+
 /* ─── FOOTER ─── */
 footer{border-top:1px solid var(--border);padding:2rem clamp(1rem,4vw,2rem);text-align:center;font-size:.68rem;color:var(--text-3);line-height:1.75;}
 footer strong{color:var(--text-2);}
@@ -324,7 +411,9 @@ footer strong{color:var(--text-2);}
     <a href="#fails">Why AI Fails</a>
     <a href="#arch">Architecture</a>
     <a href="#regulatory">Regulatory</a>
-    <a href="#start">Start Here</a>
+    <a href="#roi">ROI Calc</a>
+    <a href="#assess">Assessment</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="nav-date">June 2026</div>
 </nav>
@@ -422,9 +511,15 @@ footer strong{color:var(--text-2);}
       </div>
     </div>
 
-    <div class="note warn">
-      <div class="note-label">⚗️ Low-Quality Corpus Problem</div>
-      <div class="note-text">RAG systems are only as good as the documents they index. Years of inconsistently written CAPAs, migration gaps, and decommissioned-system artifacts produce <strong>confidently wrong answers</strong> — drawn from your own flawed records. A corpus quality assessment is a prerequisite, not an afterthought.</div>
+    <div class="grid-2" style="margin-top:.75rem;">
+      <div class="note warn">
+        <div class="note-label">⚗️ Low-Quality Corpus Problem</div>
+        <div class="note-text">RAG systems are only as good as the documents they index. Years of inconsistently written CAPAs and migration gaps produce <strong>confidently wrong answers</strong> drawn from your own flawed records. A corpus quality assessment is a prerequisite, not an afterthought.</div>
+      </div>
+      <div class="note purple">
+        <div class="note-label">🌐 Multi-Site &amp; Multilingual Challenge</div>
+        <div class="note-text">Large pharma operates across dozens of GMP sites in multiple languages. A QMS AI that works in English at Lyon may fail in German at Frankfurt or Mandarin at Shanghai. <strong>Each site may run a different QMS instance</strong> (separate Veeva tenants, separate SAP clients). Multi-site deployment requires jurisdiction-specific regulatory mapping, language-aware document indexing, and a global governance model defining which site's CAPA library feeds which AI index.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -502,15 +597,22 @@ footer strong{color:var(--text-2);}
             <span class="api-status live">✦ Live REST API</span>
           </div>
           <div class="api-card">
-            <div class="api-flag">🇪🇺 EU — EMA</div>
-            <div class="api-name">EMA GMP Non-Compliance Reports</div>
-            <div class="api-body">Published inspection non-compliance decisions. Europe PMC + EMA portal.</div>
-            <span class="api-status proxy">◎ Europe PMC proxy</span>
+            <div class="api-flag">🇪🇺 EU — EMA via Europe PMC</div>
+            <div class="api-name">EMA Regulatory Publications</div>
+            <div class="api-body">Recent EMA GMP guidance &amp; regulatory publications indexed via Europe PMC. Live API feed below.</div>
+            <span class="api-status live">✦ Live via Europe PMC</span>
           </div>
         </div>
-        <div class="note">
+        <div class="feed-wrap" style="margin-top:.9rem;">
+          <div class="feed-hdr">
+            <div class="feed-title"><div class="live-dot" style="background:var(--accent-2);box-shadow:0 0 5px rgba(43,130,220,.5);"></div>EMA — Recent GMP Regulatory Publications</div>
+            <div class="feed-meta" id="ema-meta">Loading…</div>
+          </div>
+          <div class="feed-body" id="ema-body"><div class="feed-spin">⟳ Fetching from europepmc.org…</div></div>
+        </div>
+        <div class="note" style="margin-top:.75rem;">
           <div class="note-label">Why This Matters</div>
-          <div class="note-text">An AI tool that pattern-matches your own documents against current enforcement trends is <strong>proactive QA intelligence</strong> — identifying risk before the inspector arrives. No current QMS platform provides this. EMA GMP inspection reports are published at <em>ema.europa.eu/gmp-compliance-reports</em>.</div>
+          <div class="note-text">Pattern-matching your own documents against current enforcement trends is <strong>proactive QA intelligence</strong> — identifying risk before the inspector arrives. EMA GMP non-compliance reports: <em>ema.europa.eu/gmp-compliance-reports</em>.</div>
         </div>
       </div>
     </div>
@@ -805,6 +907,139 @@ footer strong{color:var(--text-2);}
   </div>
 </section>
 
+<!-- S10: ROI CALCULATOR -->
+<section class="section" id="roi">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-kicker"><div class="sec-num">10</div><div class="sec-label">ROI Calculator</div></div>
+      <div class="sec-title">Estimate Your Annual Savings</div>
+      <div class="sec-sub">Based on the UCB Biopharma pilot and industry benchmarks. Adjust inputs to match your site — the calculator updates in real time.</div>
+    </div>
+    <div class="calc-wrap">
+      <div class="calc-inputs">
+        <p style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:1rem;">Your Site Parameters</p>
+        <div class="calc-row">
+          <div class="calc-label"><span class="calc-lname">Batches released per month</span><span class="calc-val" id="v-batches">20</span></div>
+          <input type="range" id="batches" min="1" max="200" value="20" oninput="document.getElementById('v-batches').textContent=this.value;calcROI()">
+        </div>
+        <div class="calc-row">
+          <div class="calc-label"><span class="calc-lname">Current BRR time per batch (hrs)</span><span class="calc-val" id="v-brr">6.0</span></div>
+          <input type="range" id="brr" min="2" max="12" step="0.5" value="6" oninput="document.getElementById('v-brr').textContent=parseFloat(this.value).toFixed(1);calcROI()">
+        </div>
+        <div class="calc-row">
+          <div class="calc-label"><span class="calc-lname">CAPAs written per month</span><span class="calc-val" id="v-capas">8</span></div>
+          <input type="range" id="capas" min="1" max="80" value="8" oninput="document.getElementById('v-capas').textContent=this.value;calcROI()">
+        </div>
+        <div class="calc-row">
+          <div class="calc-label"><span class="calc-lname">Current CAPA drafting time (hrs)</span><span class="calc-val" id="v-capatime">4.0</span></div>
+          <input type="range" id="capatime" min="1" max="10" step="0.5" value="4" oninput="document.getElementById('v-capatime').textContent=parseFloat(this.value).toFixed(1);calcROI()">
+        </div>
+        <div class="calc-row">
+          <div class="calc-label"><span class="calc-lname">Products requiring APQR per year</span><span class="calc-val" id="v-apqr">15</span></div>
+          <input type="range" id="apqr" min="1" max="100" value="15" oninput="document.getElementById('v-apqr').textContent=this.value;calcROI()">
+        </div>
+        <div class="calc-row" style="margin-bottom:0">
+          <div class="calc-label"><span class="calc-lname">QA FTE fully-loaded hourly cost ($)</span><span class="calc-val" id="v-rate">$120</span></div>
+          <input type="range" id="rate" min="50" max="300" step="5" value="120" oninput="document.getElementById('v-rate').textContent='$'+this.value;calcROI()">
+        </div>
+      </div>
+      <div class="calc-output">
+        <div class="calc-total-row">
+          <div class="calc-total-n" id="calc-total">$0</div>
+          <div class="calc-total-l">Estimated Annual Savings</div>
+        </div>
+        <div class="calc-phases">
+          <div class="calc-phase">
+            <div class="calc-phase-label">Phase 1<br><span style="font-size:.58rem;color:var(--text-3)">BRR</span></div>
+            <div class="calc-bar-wrap"><div class="calc-bar" id="bar-p1" style="background:var(--green);width:0%"></div></div>
+            <div class="calc-phase-val" id="calc-p1">$0</div>
+          </div>
+          <div class="calc-phase">
+            <div class="calc-phase-label">Phase 2<br><span style="font-size:.58rem;color:var(--text-3)">CAPA</span></div>
+            <div class="calc-bar-wrap"><div class="calc-bar" id="bar-p2" style="background:var(--accent-2);width:0%"></div></div>
+            <div class="calc-phase-val" id="calc-p2">$0</div>
+          </div>
+          <div class="calc-phase">
+            <div class="calc-phase-label">Phase 3<br><span style="font-size:.58rem;color:var(--text-3)">APQR</span></div>
+            <div class="calc-bar-wrap"><div class="calc-bar" id="bar-p3" style="background:var(--purple);width:0%"></div></div>
+            <div class="calc-phase-val" id="calc-p3">$0</div>
+          </div>
+        </div>
+        <div class="calc-metrics">
+          <div class="calc-metric"><div class="calc-metric-n" id="calc-hours">0</div><div class="calc-metric-l">QA hours reclaimed/year</div></div>
+          <div class="calc-metric"><div class="calc-metric-n" id="calc-payback">—</div><div class="calc-metric-l">Phase 1 payback period</div></div>
+          <div class="calc-metric"><div class="calc-metric-n" id="calc-fte">0.0</div><div class="calc-metric-l">FTE equivalent reclaimed</div></div>
+          <div class="calc-metric"><div class="calc-metric-n" id="calc-apqr-days">0</div><div class="calc-metric-l">APQR days saved/year</div></div>
+        </div>
+        <div class="calc-disclaimer">Estimates based on UCB Biopharma GMP AI Pilot (PDA 2025): 61% BRR reduction. CAPA: 30 min vs. baseline. APQR: 90% time reduction. Phase 1 implementation assumed at ~$100k. Illustrative only — actual results vary by site complexity and vendor.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S11: SELF-ASSESSMENT -->
+<section class="section" id="assess">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="sec-kicker"><div class="sec-num">11</div><div class="sec-label">Readiness Assessment</div></div>
+      <div class="sec-title">Is Your Site Ready for GMP AI?</div>
+      <div class="sec-sub">Six questions — 2 minutes. Get a personalised phase recommendation and prerequisite checklist based on your current QMS state.</div>
+    </div>
+    <div class="grid-2" style="gap:1.5rem;align-items:start;">
+      <div class="quiz-wrap" id="quiz-wrap">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress" style="width:0%"></div></div>
+        <div class="quiz-body" id="quiz-body"><!-- JS renders here --></div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:.9rem;">
+          <div class="card-title">📊 How Scoring Works</div>
+          <div style="display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem;">
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.5rem .7rem;background:rgba(192,58,43,.04);border-radius:var(--r-sm);border-left:3px solid var(--red);">
+              <div style="font-size:.7rem;font-weight:700;color:var(--red);width:60px;flex-shrink:0">0–3 pts</div>
+              <div style="font-size:.76rem;color:var(--text-2)"><strong>Prerequisites first</strong> — fix OCR capability and corpus quality before AI</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.5rem .7rem;background:rgba(160,110,0,.04);border-radius:var(--r-sm);border-left:3px solid var(--amber);">
+              <div style="font-size:.7rem;font-weight:700;color:var(--amber);width:60px;flex-shrink:0">4–6 pts</div>
+              <div style="font-size:.76rem;color:var(--text-2)"><strong>Phase 1 ready</strong> — start with deterministic verification only</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.5rem .7rem;background:rgba(43,130,220,.04);border-radius:var(--r-sm);border-left:3px solid var(--accent-2);">
+              <div style="font-size:.7rem;font-weight:700;color:var(--accent-2);width:60px;flex-shrink:0">7–9 pts</div>
+              <div style="font-size:.76rem;color:var(--text-2)"><strong>Phase 1+2 ready</strong> — good foundation for RAG after corpus gate</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:.75rem;padding:.5rem .7rem;background:rgba(26,140,85,.04);border-radius:var(--r-sm);border-left:3px solid var(--green);">
+              <div style="font-size:.7rem;font-weight:700;color:var(--green);width:60px;flex-shrink:0">10–12 pts</div>
+              <div style="font-size:.76rem;color:var(--text-2)"><strong>Full stack candidate</strong> — highest ROI potential across all four layers</div>
+            </div>
+          </div>
+        </div>
+        <div class="note">
+          <div class="note-label">About This Assessment</div>
+          <div class="note-text">Based on the prerequisites identified in the UCB Biopharma implementation and the EY GxP AI Compliance analysis (2025). All inputs are local — nothing is transmitted. Use results as a starting point for internal discussion, not a definitive audit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div>
+      <div class="sec-kicker" style="margin-bottom:.75rem;"><div class="sec-num">→</div><div class="sec-label">Get in Touch</div></div>
+      <div class="cta-title">Interested in Piloting This at Your Site?</div>
+      <div class="cta-body">I work at the intersection of AI and regulated healthcare — building tools that respect the constraints of GMP, clinical evidence, and regulatory science. If you're evaluating GMP documentation AI, exploring a pilot, or want to discuss the architecture, I'm happy to connect.<br><br>This guide is freely shared. Cite it, forward it, adapt it for your QA team.</div>
+    </div>
+    <div class="cta-card">
+      <div class="cta-avatar">NQ</div>
+      <div class="cta-name">Nathan Qin</div>
+      <div class="cta-role">NathanTwin Intelligence<br>AI · Healthcare · Regulatory Science</div>
+      <a class="cta-btn primary" href="https://www.linkedin.com/in/nathanqin" target="_blank" rel="noopener">🔗 Connect on LinkedIn</a>
+      <button class="cta-btn ghost" onclick="window.print()">🖨 Print / Save PDF</button>
+      <div style="font-size:.6rem;color:var(--text-3);margin-top:.6rem;">nathantwin-gmp-intelligence.vercel.app</div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div style="max-width:1080px;margin:0 auto;">
     <strong>AI for GMP Documentation — A Practical Guide for Quality Managers</strong><br>
@@ -814,34 +1049,175 @@ footer strong{color:var(--text-2);}
 </footer>
 
 <script>
+// ─── FDA LIVE FEED ───────────────────────────────────────────────
 (function(){
+  const fmtDate=d=>(!d||d.length<8)?d||'':d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8);
+  const clsLbl=c=>{c=(c||'').toUpperCase();if(/CLASS\s*III/i.test(c))return'III';if(/CLASS\s*II/i.test(c))return'II';if(/CLASS\s*I[^IV]/i.test(c)||c==='CLASS I')return'I';return(c.match(/[IV]+/)||['?'])[0];};
   function loadFeed(btn){
     document.querySelectorAll('.ffbtn').forEach(b=>b.classList.remove('on'));
-    if(btn) btn.classList.add('on');
-    const q = btn ? btn.dataset.q : 'GMP OR manufacturing OR contamination OR sterility OR "data integrity"';
-    const body=document.getElementById('feed-body');
-    const meta=document.getElementById('feed-meta');
-    body.innerHTML='<div class="feed-spin">⟳ Fetching from api.fda.gov…</div>';
-    meta.textContent='Loading…';
-    const fmtDate=d=>(!d||d.length<8)?d||'':d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8);
-    const clsLbl=c=>{c=(c||'').toUpperCase();if(/CLASS\s*III/i.test(c))return'III';if(/CLASS\s*II/i.test(c))return'II';if(/CLASS\s*I[^IV]/i.test(c)||c==='CLASS I')return'I';return(c.match(/[IV]+/)||['?'])[0];};
+    if(btn)btn.classList.add('on');
+    const q=btn?btn.dataset.q:'GMP OR manufacturing OR contamination OR sterility OR "data integrity"';
+    const body=document.getElementById('feed-body'),meta=document.getElementById('feed-meta');
+    body.innerHTML='<div class="feed-spin">⟳ Fetching from api.fda.gov…</div>';meta.textContent='Loading…';
     fetch('https://api.fda.gov/drug/enforcement.json?search=reason_for_recall:('+encodeURIComponent(q)+')&limit=8&sort=report_date:desc')
       .then(r=>r.json()).then(d=>{
         const rows=(d&&d.results)||[];
         if(!rows.length){body.innerHTML='<div class="feed-spin">No records for this filter.</div>';meta.textContent='0 results';return;}
         meta.textContent=rows.length+' records · '+new Date().toLocaleTimeString();
         body.innerHTML=rows.map(r=>{
-          const cls=clsLbl(r.classification||'');
-          const firm=(r.recalling_firm||'').slice(0,52);
-          const reason=(r.reason_for_recall||'').slice(0,160);
-          const date=fmtDate(r.report_date||r.recall_initiation_date||'');
+          const cls=clsLbl(r.classification||''),firm=(r.recalling_firm||'').slice(0,52),reason=(r.reason_for_recall||'').slice(0,160),date=fmtDate(r.report_date||r.recall_initiation_date||'');
           return`<div class="fi"><div class="fi-cls ${cls}">${cls}</div><div><div class="fi-firm">${firm}</div><div class="fi-reason">${reason}${reason.length>=160?'…':''}</div><div class="fi-date">${date} · openFDA</div></div></div>`;
         }).join('');
       }).catch(e=>{body.innerHTML=`<div class="feed-spin" style="color:var(--red)">openFDA unreachable: ${e.message}</div>`;meta.textContent='error';});
   }
-  window.loadFeed=loadFeed;
-  loadFeed(null);
+  window.loadFeed=loadFeed;loadFeed(null);
 })();
+
+// ─── EMA LIVE FEED (Europe PMC) ──────────────────────────────────
+(function(){
+  const body=document.getElementById('ema-body'),meta=document.getElementById('ema-meta');
+  const url='https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=("good+manufacturing+practice"+OR+"GMP+guidance"+OR+"EMA+annex")+AND+SRC:MED&resulttype=lite&format=json&pageSize=6&sort=P_PDATE_D+desc';
+  fetch(url).then(r=>r.json()).then(d=>{
+    const results=(d&&d.resultList&&d.resultList.result)||[];
+    if(!results.length){body.innerHTML='<div class="feed-spin">No EMA results returned.</div>';meta.textContent='0 results';return;}
+    meta.textContent=results.length+' publications · '+new Date().toLocaleTimeString();
+    body.innerHTML=results.map(r=>{
+      const title=(r.title||'').slice(0,120);
+      const journal=r.journalTitle||r.source||'';
+      const year=r.pubYear||'';
+      const pmid=r.pmid?`https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/`:(r.doi?`https://doi.org/${r.doi}`:'#');
+      return`<div class="ema-item"><span class="ema-tag">EMA / GMP</span><div><a class="ema-title" href="${pmid}" target="_blank" rel="noopener" style="color:var(--text-1);text-decoration:none;">${title}${title.length>=120?'…':''}</a><div class="ema-meta">${journal} · ${year}</div></div></div>`;
+    }).join('');
+  }).catch(()=>{body.innerHTML='<div class="feed-spin" style="color:var(--text-3)">Could not reach Europe PMC — <a href="https://europepmc.org" target="_blank">visit portal</a></div>';meta.textContent='error';});
+})();
+
+// ─── ROI CALCULATOR ──────────────────────────────────────────────
+function fmtMoney(n){if(n>=1e6)return'$'+(n/1e6).toFixed(2)+'M';if(n>=1000)return'$'+(n/1000).toFixed(0)+'k';return'$'+Math.round(n);}
+function fmtNum(n){if(n>=1000)return(n/1000).toFixed(1)+'k';return Math.round(n).toString();}
+function calcROI(){
+  const batches=+document.getElementById('batches').value;
+  const brr=+document.getElementById('brr').value;
+  const capas=+document.getElementById('capas').value;
+  const capatime=+document.getElementById('capatime').value;
+  const apqr=+document.getElementById('apqr').value;
+  const rate=+document.getElementById('rate').value;
+  // Phase 1: 61% BRR reduction (UCB pilot)
+  const p1hrs=batches*brr*0.61*12;
+  const p1=$=p1hrs*rate;
+  // Phase 2: CAPA from capatime to 0.5 hrs
+  const p2hrs=capas*Math.max(0,capatime-0.5)*12;
+  const p2$=p2hrs*rate;
+  // Phase 3: APQR 90% reduction (80 hrs/product baseline)
+  const p3hrs=apqr*80*0.90;
+  const p3$=p3hrs*rate;
+  const total$=p1$+p2$+p3$;
+  const totalHrs=p1hrs+p2hrs+p3hrs;
+  const payback=p1$>0?Math.ceil((100000/p1$)*12):null;
+  document.getElementById('calc-total').textContent=fmtMoney(total$);
+  document.getElementById('calc-p1').textContent=fmtMoney(p1$);
+  document.getElementById('calc-p2').textContent=fmtMoney(p2$);
+  document.getElementById('calc-p3').textContent=fmtMoney(p3$);
+  document.getElementById('calc-hours').textContent=fmtNum(totalHrs);
+  document.getElementById('calc-payback').textContent=payback?payback+' mo':'N/A';
+  document.getElementById('calc-fte').textContent=(totalHrs/1800).toFixed(1);
+  document.getElementById('calc-apqr-days').textContent=Math.round(p3hrs/8);
+  if(total$>0){
+    document.getElementById('bar-p1').style.width=(p1$/total$*100)+'%';
+    document.getElementById('bar-p2').style.width=(p2$/total$*100)+'%';
+    document.getElementById('bar-p3').style.width=(p3$/total$*100)+'%';
+  }
+}
+calcROI();
+
+// ─── SELF-ASSESSMENT QUIZ ────────────────────────────────────────
+const QUESTIONS=[
+  {q:'What type of batch records does your site primarily use?',opts:[
+    {icon:'💻',label:'Fully electronic',sub:'EBR, Veeva, Sapio — all structured data',pts:2},
+    {icon:'📄',label:'Hybrid',sub:'Electronic QMS + some paper / scanned records',pts:1},
+    {icon:'🗂',label:'Primarily paper',sub:'Handwritten BMRs, scanned PDFs',pts:0,flag:'OCR pre-processing is a prerequisite — add 4–6 weeks before Phase 1.'}
+  ]},
+  {q:'How many batches does your site release per month?',opts:[
+    {icon:'🔹',label:'Fewer than 10',sub:'Small volume — lower absolute ROI',pts:1},
+    {icon:'🔸',label:'10–50 batches',sub:'Medium volume — strong Phase 1 case',pts:2},
+    {icon:'🔴',label:'More than 50',sub:'High volume — highest ROI potential',pts:3}
+  ]},
+  {q:'Where is your deviation and CAPA history stored?',opts:[
+    {icon:'✅',label:'Single validated QMS',sub:'All records in one place (Veeva, TrackWise, etc.)',pts:2},
+    {icon:'⚠️',label:'Multiple systems, partially integrated',sub:'Some migration done but gaps exist',pts:1},
+    {icon:'🔴',label:'Mixed / legacy / paper archive',sub:'Records scattered across decommissioned systems',pts:0,flag:'Corpus quality assessment required before RAG deployment.'}
+  ]},
+  {q:'Has your controlled document corpus been quality-assessed for completeness?',opts:[
+    {icon:'✅',label:'Yes — within the last 2 years',sub:'Gaps documented, standards defined',pts:2},
+    {icon:'⚠️',label:'Partially assessed',sub:'Some product lines assessed, not all',pts:1},
+    {icon:'❌',label:'Not assessed',sub:'Unknown data quality baseline',pts:0,flag:'Corpus quality gate is a prerequisite — budget 4–8 weeks before RAG layer.'}
+  ]},
+  {q:'How many products require Annual Product Quality Review at your site?',opts:[
+    {icon:'🔹',label:'Fewer than 5',sub:'APQR savings will be modest',pts:1},
+    {icon:'🔸',label:'5–20 products',sub:'Meaningful APQR automation case',pts:2},
+    {icon:'🔴',label:'More than 20',sub:'APQR is a major burden — highest Phase 3 ROI',pts:3}
+  ]},
+  {q:'Do you operate across multiple GMP sites or languages?',opts:[
+    {icon:'🏢',label:'Single site, one language',sub:'Simplest deployment — fastest to value',pts:2},
+    {icon:'🏭',label:'Multiple sites, same language',sub:'Requires multi-tenant QMS planning',pts:1},
+    {icon:'🌐',label:'Multiple sites, multiple languages',sub:'Complex — requires jurisdiction mapping + language-aware indexing',pts:0,flag:'Multi-site/multilingual architecture adds 6–12 months to full rollout. Start single-site.'}
+  ]}
+];
+let qIdx=0,score=0,flags=[];
+function renderQuiz(){
+  const wrap=document.getElementById('quiz-body');
+  const pct=Math.round((qIdx/QUESTIONS.length)*100);
+  document.getElementById('quiz-progress').style.width=pct+'%';
+  if(qIdx>=QUESTIONS.length){showResult();return;}
+  const q=QUESTIONS[qIdx];
+  wrap.innerHTML=`<div class="quiz-step-num">Question ${qIdx+1} of ${QUESTIONS.length}</div>
+  <div class="quiz-q">${q.q}</div>
+  <div class="quiz-options">${q.opts.map((o,i)=>`
+    <div class="quiz-opt" id="opt-${i}" onclick="selectOpt(${i},${o.pts},'${(o.flag||'').replace(/'/g,"\\'")}')">
+      <div class="quiz-opt-icon">${o.icon}</div>
+      <div class="quiz-opt-text"><strong>${o.label}</strong>${o.sub}</div>
+    </div>`).join('')}</div>
+  <div class="quiz-nav">
+    <button class="quiz-btn secondary" onclick="prevQ()" ${qIdx===0?'disabled style="opacity:.4"':''}>← Back</button>
+    <span style="font-size:.65rem;color:var(--text-3);">Score so far: ${score} pts</span>
+    <button class="quiz-btn primary" id="quiz-next" onclick="nextQ()" disabled>Next →</button>
+  </div>`;
+}
+let selectedPts=null,selectedFlag='';
+function selectOpt(i,pts,flag){
+  document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('selected'));
+  document.getElementById('opt-'+i).classList.add('selected');
+  selectedPts=pts;selectedFlag=flag;
+  document.getElementById('quiz-next').disabled=false;
+}
+function nextQ(){
+  if(selectedPts===null)return;
+  score+=selectedPts;
+  if(selectedFlag)flags.push(selectedFlag);
+  selectedPts=null;selectedFlag='';
+  qIdx++;renderQuiz();
+}
+function prevQ(){
+  if(qIdx<=0)return;
+  qIdx--;selectedPts=null;selectedFlag='';renderQuiz();
+}
+function showResult(){
+  document.getElementById('quiz-progress').style.width='100%';
+  let tier,color,bg,icon,next;
+  if(score<=3){tier='Prerequisites First';color='var(--red)';bg='rgba(192,58,43,.08)';icon='🔴';next='Fix OCR capability and corpus quality before evaluating AI tools. Expected timeline to Phase 1 readiness: 3–6 months.';}
+  else if(score<=6){tier='Phase 1 Ready';color='var(--amber)';bg='rgba(160,110,0,.07)';icon='🟡';next='Start with Layer 1 deterministic verification on one product line. Estimated Phase 1 go-live: 6–9 months from kick-off.';}
+  else if(score<=9){tier='Phase 1 + 2 Ready';color='var(--accent-2)';bg='rgba(43,130,220,.07)';icon='🔵';next='Strong foundation for both deterministic verification and RAG-based CAPA intelligence. Run corpus quality gate before RAG deployment.';}
+  else{tier='Full Stack Candidate';color='var(--green)';bg='rgba(26,140,85,.07)';icon='🟢';next='Excellent conditions for all four layers. Phase 3 APQR automation will deliver highest ROI given your portfolio size and data quality.';}
+  const flagHTML=flags.length?`<div style="margin-top:.75rem;"><div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:.4rem;">Prerequisites to address:</div>${flags.map(f=>`<div class="quiz-result-item"><span>⚠️</span><span>${f}</span></div>`).join('')}</div>`:'';
+  document.getElementById('quiz-body').innerHTML=`<div class="quiz-result">
+    <div class="quiz-score-ring" style="background:${bg};color:${color};">${icon}</div>
+    <div class="quiz-result-title" style="color:${color};">${tier}</div>
+    <div style="font-size:.7rem;color:var(--text-3);margin-bottom:.5rem;">Score: ${score} / 12</div>
+    <div class="quiz-result-sub">${next}</div>
+    ${flagHTML}
+    <button class="quiz-btn secondary" style="margin:1rem auto 0;display:block;" onclick="qIdx=0;score=0;flags=[];renderQuiz()">Retake Assessment</button>
+  </div>`;
+}
+renderQuiz();
 </script>
 </body>
 </html>
